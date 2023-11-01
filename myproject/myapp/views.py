@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from myapp.forms import BookingForm
 # Create your views here.
 def drinks(request, drink_name):
     options = {
@@ -23,3 +24,12 @@ def menu(request):
 
 def book(request):
     return HttpResponse('<h1>Make a Booking</h1>')
+
+def form_view(request):
+    form = BookingForm()
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+    context = {"form" : form}
+    return render(request, "booking.html", context)
