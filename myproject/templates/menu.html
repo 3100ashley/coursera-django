@@ -13,9 +13,15 @@
     <!-- Add heading code -->
     <h1 style="color: #495E57"> Menu </h1>
     <!-- Add paragraph code -->
-
+    {% if menu %}
+    {% for item in menu %}
+    <p>{{item.name}} : {{item.price}}</p>
+    {% endfor %}
+    {% else %}
+    <p>No menu items to display</p>
+    {% endif %}
     <!-- Add image code -->
-    <img width="500" height="600" src="{% static '/dessert.jpg' %}"/>
+    
 </body>
 
 </html>

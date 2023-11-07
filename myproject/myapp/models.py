@@ -24,3 +24,17 @@ class Employee(models.Model):
 
     def __str__(self) -> str:
         return self.first_name
+    
+class Menu(models.Model):
+    name = models.CharField(max_length=200)
+    price = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+    
+class Person(models.Model):
+    name = models.CharField(max_length=200)
+    age = models.IntegerField
+
+    def __str__(self):
+        return self.name 
