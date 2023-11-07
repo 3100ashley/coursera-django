@@ -17,10 +17,13 @@ def home(request):
     return HttpResponse('<h1>Welcome to Little Lemon</h1>')
 
 def about(request):
-    return HttpResponse('<h1>About Us</h1>')
+    about_content = "Little Lemon is a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. The chefs draw inspiration from Italian, Greek, and Turkish culture and have a menu of 12–15 items that they rotate seasonally. The restaurant has a rustic and relaxed atmosphere with moderate prices, making it a popular place for a meal any time of the day."
+    return render(request, 'about.html', {'content': about_content})
+    
 
 def menu(request):
-    return HttpResponse('<h1>Menu</h1>')
+    menu_content = "Here is the menu content"
+    return render(request, 'menu.html', {'content': menu_content})
 
 def book(request):
     return HttpResponse('<h1>Make a Booking</h1>')
